@@ -10,21 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/infoContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBar"
         app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtFicha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/ficha"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/white">
-        </com.google.android.material.textview.MaterialTextView>
 
         <ImageButton
             android:id="@+id/btnSelectFavourite"
@@ -32,19 +20,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:background="#00000000"
+            android:contentDescription="@string/boton_favs"
             app:layout_constraintBottom_toTopOf="@+id/divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_favorite_border_24"
-            android:contentDescription="@string/boton_favs"/>
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:layout_marginTop="16dp"
-            android:background="#979E9F"
-            app:layout_constraintTop_toBottomOf="@+id/txtFicha" />
+            app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
 
         <ImageView
             android:id="@+id/imgCoverFilm"
@@ -52,10 +32,19 @@
             android:layout_height="206dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:contentDescription="@string/cover"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"
-            app:srcCompat="@drawable/coverinferno"
-            android:contentDescription="@string/cover"/>
+            app:srcCompat="@drawable/coverinferno" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescripcionSinopsis" />
 
         <TextView
             android:id="@+id/txtTitulo"
@@ -153,23 +142,34 @@
             android:id="@+id/txtDescripcionSinopsis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
             android:text="@string/lorem"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSinopsis" />
 
-        <RatingBar
-            android:id="@+id/ratingBar"
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="16dp"
+            android:background="#979E9F"
+            app:layout_constraintTop_toBottomOf="@+id/txtFicha" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtFicha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/ficha"
+            android:textColor="@color/white"
+            android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDescripcionSinopsis" />
+            app:layout_constraintTop_toTopOf="parent"></com.google.android.material.textview.MaterialTextView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -239,5 +239,12 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="60dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
