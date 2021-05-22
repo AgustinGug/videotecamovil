@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue">
 
     <ScrollView
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/barContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/basic_blue"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -17,7 +19,7 @@
             android:id="@+id/constraintLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#1F2E81"
+            android:background="@color/basic_blue"
             android:isScrollContainer="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -228,67 +230,60 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/barContent"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#0C164A"
+    <!--  Linea guia y botones de barra de navegación  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintGuide_end="60dp" />
+
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:contentDescription="@string/boton_home"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineBar"
+        app:layout_constraintEnd_toStartOf="@id/btnSearch"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <ImageButton
+        android:id="@+id/btnSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:contentDescription="@string/boton_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSelectFavourite"
+        app:layout_constraintStart_toEndOf="@+id/btnHome"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineBar"
+        app:srcCompat="@drawable/ic_baseline_search_24" />
+
+    <ImageButton
+        android:id="@id/btnSelectFavourite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:contentDescription="@string/boton_favs"
+        app:layout_constraintStart_toEndOf="@+id/btnSearch"
+        app:layout_constraintEnd_toStartOf="@id/btnUser"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBar"
+        android:src="@drawable/ic_baseline_favorite_border_24" />
+
+    <ImageButton
+        android:id="@+id/btnUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:contentDescription="@string/boton_user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnSelectFavourite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBar"
+        android:src="@drawable/ic_baseline_person_outline_24" />
 
-        <ImageButton
-            android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="@string/boton_home"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnUser"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_home_24" />
-
-        <ImageButton
-            android:id="@+id/btnSearch"
-            android:layout_width="44dp"
-            android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:contentDescription="@string/boton_search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnUser"
-            app:layout_constraintHorizontal_bias="0.29"
-            app:layout_constraintStart_toEndOf="@+id/btnHome"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_search_24" />
-
-        <ImageButton
-            android:id="@+id/btnFavourites"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:contentDescription="@string/boton_favs"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnUser"
-            app:layout_constraintHorizontal_bias="0.52"
-            app:layout_constraintStart_toEndOf="@+id/btnSearch"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
-
-        <ImageButton
-            android:id="@+id/btnUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="@string/boton_user"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_person_outline_24" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
