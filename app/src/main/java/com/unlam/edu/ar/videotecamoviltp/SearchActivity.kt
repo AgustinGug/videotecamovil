@@ -1,11 +1,11 @@
 package com.unlam.edu.ar.videotecamoviltp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 
-class FavActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity() {
 
     lateinit var btnHome : ImageButton
     lateinit var btnSearch : ImageButton
@@ -14,7 +14,7 @@ class FavActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fav)
+        setContentView(R.layout.activity_search)
 
         getViews()
         setListenerNavigationBar()
@@ -48,6 +48,4 @@ class FavActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-
 }
