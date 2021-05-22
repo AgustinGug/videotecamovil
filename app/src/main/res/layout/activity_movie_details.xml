@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scrollbars="vertical"
-        android:background="#1F2E81"
+        android:background="@color/basic_blue"
         app:layout_constraintBottom_toTopOf="@id/guidelineBar"
         app:layout_constraintTop_toTopOf="parent">
 

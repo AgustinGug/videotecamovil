@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1F2E81"
+    android:background="@color/dark_blue"
     tools:context=".UserActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/infoContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/basic_blue"
         app:layout_constraintBottom_toTopOf="@+id/guidelineBar"
         app:layout_constraintTop_toTopOf="parent">
 
