@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1F2E81"
+    android:background="@color/dark_blue"
     tools:context=".MovieDetailsActivity">
 
     <ScrollView
@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scrollbars="vertical"
+        android:background="#1F2E81"
         app:layout_constraintBottom_toTopOf="@id/guidelineBar"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -191,14 +192,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="60dp" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/dark_blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineBar" />
 
     <ImageButton
         android:id="@+id/btnHome"
