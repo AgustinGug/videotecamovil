@@ -13,7 +13,7 @@ class MoviesRepository(val retrofitApiServices: RetrofitApiService) :
 
     private val cache = HashMap<String, Movies>()
 
-    override fun getMovie(query: String, callback: (Movies) -> Unit, onError: (String) -> Unit) {
+    override fun getMovie( query: String, callback: (Movies) -> Unit, onError: (String) -> Unit) {
         if (cache.containsKey(query)){
             callback(cache[query]!!)
             return
@@ -32,8 +32,7 @@ class MoviesRepository(val retrofitApiServices: RetrofitApiService) :
                 onError(t.message.toString())
             }
         })
-    }
-
+        }
     override fun getGenreID(query: Int, callback: (Genres) -> Unit, onError: (String) -> Unit) {
         retrofitApiServices.getGenreID(query,
         object : Callback<Genres>{
@@ -67,3 +66,17 @@ class MoviesRepository(val retrofitApiServices: RetrofitApiService) :
         )
     }
 }
+
+/*object : Response<Movies>{
+            override fun onResponse(call: Call<Movies>, response: Response<Movies>) {
+                if (response.isSuccessful){
+                    cache[query] = response.body()!!
+                    callback(response.body()!!)
+                } else {
+                    onError("No encontrada")
+                }
+            }
+            override fun onFailure(call: Call<Movies>, t: Throwable) {
+                onError(t.message.toString())
+            }
+        }*/

@@ -5,7 +5,7 @@ import com.unlam.edu.ar.videotecamoviltp.model.MovieFav_Details_Model
 import com.unlam.edu.ar.videotecamoviltp.model.Movies
 
 interface MovieRepository {
-    fun getMovie(query: String, callback: (Movies) -> Unit, onError: (String) ->Unit)
+    fun getMovie(query: String, callback: (Movies) -> Unit, onError: (String) -> Unit)
 
     fun getGenreID(query: Int, callback: (Genres) -> Unit, onError: (String) -> Unit)
 
